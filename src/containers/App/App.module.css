@@ -1,0 +1,7 @@
+.container {
+    composes: flex_column from '../../styles/vars.module.css';
+}
+.btn__inicio {
+    composes: btn_base from '../../styles/vars.module.css';
+    background: red;
+}

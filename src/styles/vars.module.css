@@ -5,8 +5,6 @@
 }
 .flex {
   display: flex;
-  width: 100%;
-  height: 100vh;
   justify-content: center;
   align-items: center;
 }
@@ -14,4 +12,14 @@
 .flex_column {
   composes: flex;
   flex-direction: column;
+}
+
+.btn_base  {
+  composes: flex;
+  min-width: 100px;
+  padding: 1em;
+  border-radius: 2em;
+  border: none;
+  outline: none;
+  font-weight: bold;
 }

@@ -1,3 +1,0 @@
-.container {
-    composes: flex_column from '../vars.module.css'
-}
