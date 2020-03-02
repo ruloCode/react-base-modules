@@ -35,7 +35,7 @@ module.exports = {
       options: {
         modules: true,
       },
-    },   
+    },
     {
       test: /\.(png|gif|jpg)$/,
       use: [{
