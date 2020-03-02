@@ -6,7 +6,7 @@ module.exports = {
   entry: ['@babel/polyfill', './src/index.js'],
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
+    filename: 'bundle.modules.js',
   },
   resolve: {
     extensions: ['.js', '.jsx'],
@@ -26,17 +26,16 @@ module.exports = {
       }],
     },
     {
-      test: /\.css|.styl$/,
-      use: [{
-        loader: MiniCssExtractPlugin.loader,
-        options: {
-          modules: true,
-        },
-      },
-      'css-loader',
-      'stylus-loader',
-      ],
+      test: /\.css$/i,
+      use: 'style-loader',
     },
+    {
+      test: /\.css$/i,
+      loader: 'css-loader',
+      options: {
+        modules: true,
+      },
+    },   
     {
       test: /\.(png|gif|jpg)$/,
       use: [{
