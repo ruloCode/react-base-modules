@@ -12,41 +12,40 @@ module.exports = {
     extensions: ['.js', '.jsx'],
   },
   module: {
-    rules: [
-      {
-        test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
+    rules: [{
+      test: /\.(js|jsx)$/,
+      exclude: /node_modules/,
+      use: {
+        loader: 'babel-loader',
+      },
+    },
+    {
+      test: /\.html$/,
+      use: [{
+        loader: 'html-loader',
+      }],
+    },
+    {
+      test: /\.css|.styl$/,
+      use: [{
+        loader: MiniCssExtractPlugin.loader,
+        options: {
+          modules: true,
         },
       },
-      {
-        test: /\.html$/,
-        use: [
-          {
-            loader: 'html-loader',
-          },
-        ],
-      },
-      {
-        test: /\.css|.styl$/,
-        use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-          },
-          'css-loader',
-          'stylus-loader',
-        ],
-      },
-      {
-        test: /\.(png|gif|jpg)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: { name: 'assets/[hash].[ext]' },
-          },
-        ],
-      },
+      'css-loader',
+      'stylus-loader',
+      ],
+    },
+    {
+      test: /\.(png|gif|jpg)$/,
+      use: [{
+        loader: 'file-loader',
+        options: {
+          name: 'assets/[hash].[ext]',
+        },
+      }],
+    },
     ],
   },
   plugins: [
