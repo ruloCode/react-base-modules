@@ -1,0 +1,10 @@
+.container {
+    width: 100%;
+    height: 100%;
+}
+.btn__inicio {
+    composes: btn_base from '../../assets/styles/vars.module.css';
+    background: #95dcea;
+    margin: .3em;
+
+}
