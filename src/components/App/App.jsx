@@ -8,10 +8,6 @@ const App = () => {
   return (
     <div className={`${baseStyle.flex_column_evenly} ${style.container} `}>
       <p className={style.btn__inicio}>Hello React</p>
-      <p className={style.btn__inicio}>Hello React</p>
-      <p className={style.btn__inicio}>Hello React</p>
-      <p className={style.btn__inicio}>Hello React</p>
-
     </div>
   );
 };
